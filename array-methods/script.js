@@ -29,3 +29,23 @@ console.log(humanBuildings); // (3) ['Barracks', 'Farm', 'Lumber Mill']
 let unshifted = humanBuildings.unshift("Town Hall");
 console.log(unshifted); // 4
 console.log(humanBuildings); // (4) ['Town Hall', 'Barracks', 'Farm', 'Lumber Mill']
+
+// length mostra o tamanho do array
+console.log(humanBuildings.length); // 4
+
+// delete apaga o elemento, mas deixa 'undefined' no indice
+delete humanBuildings[0];
+console.log(humanBuildings); // (4) [vazio, 'Barracks', 'Farm', 'Lumber Mill']
+
+// concat cria um novo array juntando arrays existentes, não muda os arrays existentes, pode ser passado mais de um array como argumento ou valores
+const orcBuildings = ["Bestiary", "Orc Burrow", "War Mill"];
+const orcAndHumanBuildings = humanBuildings.concat(orcBuildings);
+
+console.log(orcAndHumanBuildings); // (7) [vazio, 'Barracks', 'Farm', 'Lumber Mill', 'Bestiary', 'Orc Burrow', 'War Mill']
+
+// splice() adiciona novos items ao array em uma posição especifica e indica se quer remover elementos, retorna os elementos removidos
+let spliced = humanBuildings.splice(0, 1);
+humanBuildings.splice(0, 0, "Town Hall");
+
+console.log(spliced); // [vazio]
+console.log(humanBuildings); // (4) ['Town Hall', 'Barracks', 'Farm', 'Lumber Mill']
