@@ -49,3 +49,9 @@ humanBuildings.splice(0, 0, "Town Hall");
 
 console.log(spliced); // [vazio]
 console.log(humanBuildings); // (4) ['Town Hall', 'Barracks', 'Farm', 'Lumber Mill']
+
+// slice() pega um pedaço do array e retorna um novo array, não remove elementos
+const sliced = humanBuildings.slice(1, 3);
+
+console.log(sliced); // (2) ['Barracks', 'Farm']
+
