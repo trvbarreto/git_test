@@ -19,3 +19,16 @@ btn3.addEventListener('click', function(e) {
     console.log(e.target);
     e.target.style.background = 'blue';
 });
+
+
+// buttons é uma nodelist com todos os elementos button
+const buttons = document.querySelectorAll('button');
+
+// .forEach itera sobre todos os botões
+buttons.forEach((button) => {
+
+    // adiciona um evento do tipo 'click' para cada um
+    button.addEventListener('click', () => {
+        alert(button.id);
+    });
+});
