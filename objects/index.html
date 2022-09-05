@@ -22,11 +22,11 @@
 
         };
 
-        console.log(person.name); // (2) ['Billy', 'Butcher']
-        console.log(person.name[0]); // Billy
-        console.log(person.age); // 32
-        person.bio(); // Billy Butcher is 32 years old.
-        person.introduceSelf(); // Hi, I'm Billy
+        console.log(person1.name); // (2) ['Billy', 'Butcher']
+        console.log(person1.name[0]); // Billy
+        console.log(person1.age); // 32
+        person1.bio(); // Billy Butcher is 32 years old.
+        person1.introduceSelf(); // Hi, I'm Billy
 
 
         const person2 = {
@@ -37,7 +37,27 @@
             introduceSelf() {
                 console.log(`Hi, I'm ${this.name[0]}`);
             },
+        };
+
+        console.log(person2.name.last);
+
+        // Object constructor function
+        function createPerson(name) {
+            const obj = {};
+            obj.name = name;
+            obj.introduceSelf = function() {
+                console.log(`Hi, I'm ${this.name}.`);
+            }
+            return obj;
         }
+
+        const salva = createPerson('Salva');
+        salva.name;
+        salva.introduceSelf();
+
+        const frankie = createPerson('Frankie');
+        frankie.name;
+        frankie.introduceSelf();
     </script>
 
 </body>
