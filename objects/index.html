@@ -10,7 +10,7 @@
     <h1>Open the console to see results.</h1>
 
     <script>
-        const person = {
+        const person1 = {
             name: ['Billy', 'Butcher'],
             age: 32,
             bio: function() {
@@ -27,6 +27,17 @@
         console.log(person.age); // 32
         person.bio(); // Billy Butcher is 32 years old.
         person.introduceSelf(); // Hi, I'm Billy
+
+
+        const person2 = {
+            name: {
+                first: 'Hughie',
+                last: 'Campbell',
+            },
+            introduceSelf() {
+                console.log(`Hi, I'm ${this.name[0]}`);
+            },
+        }
     </script>
 
 </body>
