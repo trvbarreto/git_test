@@ -58,6 +58,22 @@
         const frankie = createPerson('Frankie');
         frankie.name;
         frankie.introduceSelf();
+
+        // Better object construtor
+        function Person(name) {
+            this.name = name;
+            this.introduceSelf = function() {
+                console.log(`Hi, I'm ${this.name}`);
+            };
+        };
+
+        const salva2 = new Person('salva 2');
+        salva2.name;
+        salva2.introduceSelf();
+
+        const frankie2 = new Person('frankie 2');
+        frankie2.name;
+        frankie2.introduceSelf();
     </script>
 
 </body>
