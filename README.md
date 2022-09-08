@@ -1,4 +1,3 @@
-# git_test
-Hello Odin!
+# Knowledge Base
 
-Test: using vscode as commit editor.
+Repository for saving my code snippets for future reference.
