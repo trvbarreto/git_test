@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods</title>
+</head>
+<body>
+    <h1>Open the console to see results.</h1>
+
+    <script>
+        let aString = "Test String"
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        // .charAt()
+        // retorna o char no indice indicado
+        console.log(aString.charAt(0), aString.charAt(2));  // T s
+
+        // .charCodeAt()
+        // retorna o charcode do char no indice indicado
+        console.log(aString.charCodeAt(0)); // 84
+
+        // .concat()
+        // retorna a união de duas strings
+        let anotherString = " with Another String"
+        console.log(aString.concat(anotherString)); // Test String with Another String
+
+        // .constructor
+        // retorna o objeto construtor da String
+        console.log(aString.constructor); // ƒ String() { [native code] }
+
+        // .endsWith()
+        // retorna um boolean indicando se a string termina com o valor indicado
+        console.log(aString.endsWith("g"), aString.endsWith(23)); // true false
+
+        // .fromCharCode()
+        // retorna uma string construida com charcode
+        let charCodeToString = String.fromCharCode(72, 69, 76, 76, 79)
+        console.log(charCodeToString); // HELLO
+
+        // .includes()
+        // retorna se uma string possui um caracter ou uma sequencia de caracteres, case sensitive
+        console.log(aString.includes("Str")); // true
+        console.log(aString.includes("str")); // false
+
+        // .indexOf()
+        // retorna o primeiro indice de determinado valor, se não houver retorna -1
+        console.log(aString.indexOf("Z")); // -1
+        console.log(aString.indexOf("t")); // 3
+
+        // .lastIndexOf()
+        // retorna o último indice de determinado valor, se não houver retorna -1
+        console.log(aString.lastIndexOf("t")); // 6
+        console.log(aString.lastIndexOf("Q")); // -1
+
+        // .length
+        // retorna o tamanho da string
+        console.log(aString.length); // 11
+
+        // .localCompare()
+        // faz uma compareção de ordem alfabética e retorna positivo(se o argumento for menor), negativo(se o argumento for maior) ou zero(se forem iguais)
+        console.log(aString.localeCompare(anotherString)); // 1
+        console.log(anotherString.localeCompare(aString)); // -1
+        console.log(aString.localeCompare(aString)); // 0
+
+        // .match()
+        // retorna um array indicando se uma string ou char existe dentro de outra string, com seu indice e seu input total, se não existir retorna null
+        console.log(aString.match("s")); // ['s', index: 2, input: 'Test String', groups: undefined]
+        console.log(aString.match("ta")); // null
+
+        // .prototype
+        // retorna o protótipo do elemento
+        console.log(String.prototype); // String {'', constructor: ƒ, anchor: ƒ, at: ƒ, big: ƒ, …}
+
+        // .repeat()
+        // retorna a string repetida x número de vezes
+        console.log(aString.repeat(3)); // Test StringTest StringTest String
+
+        // .replace()
+        // retorna uma string substituindo uma string ou char por outra string ou char
+        console.log(aString.replace("Test", "Replaced")); // Replaced String
+
+        // .search()
+        // retorna o índice inicial de uma parte de string ou -1 se não existir
+        console.log(aString.search("Str"), aString.search("Zzz")); // 5 -1
+
+        // .slice()
+        // retorna um pedaço da string de acordo com os argumentos indicados, pode ser apenas inicial ou inicial e final
+        // aceita valores negativos podendo começar do fim da string
+        console.log(aString.slice(0, 3)); // Tes
+        console.log(aString.slice(2)); // st String
+        console.log(aString.slice(-4, -1)); // rin
+
+        // .split()
+        // retorna um array da string divida pelo argumento separador, para separar todo char independente do que tem entre eles, utilizar ''
+        console.log(aString.split('')); // (11) ['T', 'e', 's', 't', ' ', 'S', 't', 'r', 'i', 'n', 'g']
+        console.log(aString.split(' ')); // (2) ['Test', 'String']
+
+        // .startsWith()
+        // retorna um boolean indicando se começa ou não com o elemento indicado
+        console.log(aString.startsWith(3)); // false
+        console.log(aString.startsWith("B")); // false
+        console.log(aString.startsWith("T")); // true
+
+        // .substring()
+        // funciona parecido com o slice, corta uma parte da string e retorna, pode ser passado apenas o indice inicial ou o indice inicial e indice final
+        // a diferença é que se o final foi maior que o inicial ele apenas inverte o inicial com final, no slice retornaria vazio
+        // também não trabalha com valores negativos
+        console.log(aString.substring(0, 4)); // Test
+        console.log(aString.substring(4)); //  String
+        console.log(aString.substring(4, 0  )); // Test
+
+        // .substr()
+        // função legada, não deve ser utilizada
+        // retorna uma parte da string, tem argumento da posição inicial e quantidade de posições que vai avançar
+        console.log(aString.substr(2)); // st String
+        console.log(aString.substr(5,1)); // S
+
+        // .toLocaleLowerCase() e .toLocaleUpperCase()
+        // um deixa a string toda em lower outro todo em upper, mas dependendo da região a conversão não é apenas de acordo com unicode, ele verifica a região e faz a conversão apropriada (ex. Turco)
+        console.log(aString.toLocaleLowerCase()); // test string
+        console.log(aString.toLocaleUpperCase()); // TEST STRING
+
+        // .toLocaleLowerCase() e .toLocaleUpperCase()
+        // um deixa a string toda em lower outro todo em upper de acordo com unicode, independente da região
+        console.log(aString.toLowerCase()); // test string
+        console.log(aString.toUpperCase()); // TEST STRING
+
+        // .trim()
+        // retorna uma string sem os espaços das extremidades
+        let spacedString = "      Spaced String     "
+        console.log(spacedString.trim()); // Spaced String
+        
+    </script>
+</body>
+</html>
