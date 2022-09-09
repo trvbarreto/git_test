@@ -10,6 +10,9 @@
     <h1>Open the console to see results.</h1>
 
     <script>
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Declaração literal
         const person1 = {
             name: ['Billy', 'Butcher'],
             age: 32,
@@ -18,8 +21,7 @@
             },
             introduceSelf: function() {
                 console.log(`Hi, I'm ${this.name[0]}`);
-            }
-
+            },
         };
 
         console.log(person1.name); // (2) ['Billy', 'Butcher']
@@ -29,6 +31,8 @@
         person1.introduceSelf(); // Hi, I'm Billy
 
 
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Declaração literal com shorthand na função e objeto como valor
         const person2 = {
             name: {
                 first: 'Hughie',
@@ -41,7 +45,8 @@
 
         console.log(person2.name.last);
 
-        // Object constructor function
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Função construtora de objeto
         function createPerson(name) {
             const obj = {};
             obj.name = name;
@@ -51,15 +56,16 @@
             return obj;
         }
 
-        const salva = createPerson('Salva');
-        salva.name;
-        salva.introduceSelf();
+        const arthas = createPerson('Arthas');
+        arthas.name;
+        arthas.introduceSelf();
 
-        const frankie = createPerson('Frankie');
-        frankie.name;
-        frankie.introduceSelf();
+        const thrall = createPerson('Thrall');
+        thrall.name;
+        thrall.introduceSelf();
 
-        // Better object construtor
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Contrutor de objeto (melhor forma)
         function Person(name) {
             this.name = name;
             this.introduceSelf = function() {
@@ -67,13 +73,15 @@
             };
         };
 
-        const salva2 = new Person('salva 2');
-        salva2.name;
-        salva2.introduceSelf();
+        const terenas = new Person('Terenas');
+        terenas.name;
+        terenas.introduceSelf();
 
-        const frankie2 = new Person('frankie 2');
-        frankie2.name;
-        frankie2.introduceSelf();
+        const gromm = new Person('Gromm');
+        gromm.name;
+        gromm.introduceSelf();
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
     </script>
 
 </body>
