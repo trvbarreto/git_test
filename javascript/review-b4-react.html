@@ -93,6 +93,16 @@
 
         console.log(newArr);
 
+        // FILTER()
+        const newFilteredArr = numArray.filter(item => item % 2 === 0);
+        console.log(newFilteredArr);
+
+        // FILTER COM MAP
+        const newArr2 = numArray
+            .filter(item => item % 2 !== 0)
+            .map(item => item *10);
+        
+            console.log(newArr2);
     </script>
 </body>
 </html>
