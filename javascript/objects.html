@@ -10,24 +10,6 @@
     <h1>Open the console to see results.</h1>
 
     <script>
-        // Função construtora de objeto
-        function createPerson(name) {
-            const obj = {};
-            obj.name = name;
-            obj.introduceSelf = function() {
-                console.log(`Hi, I'm ${this.name}.`);
-            }
-            return obj;
-        }
-
-        const arthas = createPerson('Arthas');
-        arthas.name;
-        arthas.introduceSelf();
-
-        const thrall = createPerson('Thrall');
-        thrall.name;
-        thrall.introduceSelf();
-
         ///////////////////////////////////////////////////////////////////////////////////////////////////////
         // Contrutor de objeto (melhor forma)
         function Person(name) {
