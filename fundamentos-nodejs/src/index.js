@@ -1,16 +1,29 @@
 const express = require('express');
+const { v4: uuidv4 } = require('uuid'); // v4 é a versão que gera número aleatório, renomeamos para 'uuidv4'
 
 const app = express();
 
-// Retorna uma mensagem para quem requisitar a rota /
-app.get('/', (request, response) => {
-    response.send('Hello World!');
+app.use(express.json());
+
+const customers = [];
+
+app.post('/account', (req, res) => {
+    const { cpf, name } = req.body;
+
+    const customerAlreadyExists = customers.some((customer) => customer.cpf === cpf);
+
+    if (customerAlreadyExists) {
+        return res.status(400).json( {error: 'Customer already exists!' });
+    };
+
+    customers.push({
+        cpf,
+        name,
+        id: uuidv4(),
+        statement: [],
+    });
+
+    return res.status(201).send();
 });
 
-// Retorna um JSON para quem requisitar a rota /
-app.get('/json', (request, response) => {
-    return response.json({ message: 'Hello World!' });
-});
-
-// Chamada para startar a aplicação
 app.listen(3333);
