@@ -1,4 +1,4 @@
-const { request } = require('express');
+const { request, response } = require('express');
 const express = require('express');
 const { v4: uuidv4 } = require('uuid'); // v4 é a versão que gera número aleatório, renomeamos para 'uuidv4'
 
@@ -93,6 +93,36 @@ app.post('/withdraw', verifyIfExistsAccountCPF, (req, res) => {
     customer.statement.push(statementOperation);
 
     return res.status(201).send();
+});
+
+app.get('/statement/date', verifyIfExistsAccountCPF, (req, res) => {
+    const { customer } = request;
+    const { date } = req.query;
+
+    const dateFormat = new Date(date + ' 00:00');
+
+    const statement = customer.statement.filter(
+        (statement) => 
+            statement.create_at.toDateString() === 
+            new Date(dateFormat).toDateString()
+        );
+
+    return res.json(statement);
+});
+
+app.put('/account', verifyIfExistsAccountCPF, (req, res) => {
+    const { name } = req.body;
+    const { customer } = req;
+
+    customer.name = name;
+
+    return res.status(201).send();
+});
+
+app.get('/account', verifyIfExistsAccountCPF, (req, res) => {
+    const { customer } = req;
+
+    return res.json(customer);
 });
 
 app.listen(3333);
