@@ -9,7 +9,11 @@ function createCourse(req, res) {
     CreateCourseService_1.default.execute({
         name: "NodeJS",
         educator: "Dani",
-        duration: 10,
+    });
+    CreateCourseService_1.default.execute({
+        name: "ReactJS",
+        educator: "Diego",
+        duration: 4,
     });
     return res.send();
 }

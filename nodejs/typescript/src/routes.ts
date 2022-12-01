@@ -5,7 +5,12 @@ export function createCourse(req: Request, res: Response) {
     CreateCourseService.execute({
         name: "NodeJS",
         educator: "Dani",
-        duration: 10,
+    });
+
+    CreateCourseService.execute({
+        name: "ReactJS",
+        educator: "Diego",
+        duration: 4,
     });
 
     return res.send();
