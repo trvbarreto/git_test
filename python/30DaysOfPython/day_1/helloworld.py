@@ -1,3 +1,5 @@
+import math
+
 print(f'Addition 3+4 = {3+4}')
 print(f'Subtraction 3-4 = {3-4}')
 print(f'Multiplication 3*4 = {3*4}')
@@ -27,3 +29,25 @@ print(type(['Asabeneh', 'Python', 'Finland']))
 print(type(my_name))
 print(type(my_family_name))
 print(type(my_country))
+
+print()
+
+my_complex = 4j
+my_boolean = True
+my_list = [1, 2, 3]
+my_typle = (1, 2, 3)
+my_set = {1, 2, 3}
+my_dict = {'one': 1, 'two': 2}
+print(type(my_complex))
+print(type(my_boolean))
+print(type(my_list))
+print(type(my_typle))
+print(type(my_set))
+print(type(my_dict))
+
+print()
+
+point_a = (2, 3)
+point_b = (10, 8)
+d = math.sqrt(((point_b[0]-point_a[0])**2)+((point_b[1]-point_a[1])**2))
+print(d)
