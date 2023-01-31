@@ -22,3 +22,10 @@
 # circle_radius = int(input('Enter the radius: '))
 # area = math.pi * (circle_radius * circle_radius)
 # c_perimeter = 2 * (math.pi * circle_radius)
+
+# script that prompts the user to enter hours and rate per hour. Calculate pay of the person?
+
+hours = int(input('Enter hours: '))
+rate_per_hour = int(input('Enter rate per hour: '))
+weekly_earnings = hours * rate_per_hour
+print(f'Your weekly earning is {weekly_earnings}')
