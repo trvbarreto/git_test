@@ -30,6 +30,20 @@
 # print(f'Your weekly earning is {weekly_earnings}')
 
 #  a script that prompts the user to enter number of years. Calculate the number of seconds a person can live. Assume a person can live hundred years
-years_lived = int(input('Enter number of years you have lived: '))
-seconds_lived = ((years_lived * 365) * 24) * 3600
-print(f'You have lived for {seconds_lived} seconds')
+# years_lived = int(input('Enter number of years you have lived: '))
+# seconds_lived = ((years_lived * 365) * 24) * 3600
+# print(f'You have lived for {seconds_lived} seconds')
+
+for x in range(5):
+    x += 1
+    print(x, end=' ')
+    for y in range(4):
+        y += 1
+        if (y == 1):
+            print(1, end=' ')
+        elif (x == 1):
+            print(1, end=' ')
+        else:
+            y -= 1
+            print(x**y, end=' ')
+    print('')
