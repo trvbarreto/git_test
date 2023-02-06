@@ -22,3 +22,24 @@ print(it_companies[0], it_companies[3], it_companies[-1])
 # 10
 it_companies[2] = 'Alibaba'
 print(it_companies)
+# 11
+it_companies.append('Microsoft')
+# 12
+it_companies.insert(4, 'XXT Corporation')
+# 13
+it_companies[0] = it_companies[0].upper()
+# 14
+str = '#; '.join(it_companies)
+# 15
+print('IBM' in it_companies)
+print('Alexa' in it_companies)
+# 16
+it_companies.sort()
+# 17
+it_companies.reverse()
+# 18
+print(it_companies[0:3])
+# 19
+print(it_companies[-3:])
+# 20
+print(it_companies[4:6])
