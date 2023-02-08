@@ -43,25 +43,36 @@ it_companies = ['Facebook', 'Google', 'Microsoft',
 # print(it_companies[-3:])
 # # 20
 # print(it_companies[4:6])
-# 21
-print(it_companies)
-it_companies.pop(0)
-print(it_companies)
-# 22
-length = len(it_companies)
-if length % 2 != 0:
-    arg = int(length/2)
-    del it_companies[arg]
-else:
-    arg = int(length/2)
-    del it_companies[arg-1:arg+1]
-print(it_companies)
-# 23
-it_companies.pop()
-print(it_companies)
-# 24
-del it_companies[0:len(it_companies)+1]
-print(it_companies)
-# 25
-del it_companies
-print(it_companies)
+# # 21
+# print(it_companies)
+# it_companies.pop(0)
+# print(it_companies)
+# # 22
+# length = len(it_companies)
+# if length % 2 != 0:
+#     arg = int(length/2)
+#     del it_companies[arg]
+# else:
+#     arg = int(length/2)
+#     del it_companies[arg-1:arg+1]
+# print(it_companies)
+# # 23
+# it_companies.pop()
+# print(it_companies)
+# # 24
+# del it_companies[0:len(it_companies)+1]
+# print(it_companies)
+# # 25
+# del it_companies
+# print(it_companies)
+# 26
+front_end = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+back_end = ['Node', 'Express', 'MongoDB']
+joined_lists = front_end + back_end
+print(joined_lists)
+# 27
+full_stack = joined_lists.copy()
+redux_index = full_stack.index('Redux')
+full_stack.insert(redux_index+1, 'SQL')
+full_stack.insert(redux_index+1, 'Python')
+print(full_stack)
