@@ -26,7 +26,7 @@
 
 # File IO Erros
 try:
-    with open('teste.txt', mode='x') as my_file:
+    with open('teste.txt', mode='r') as my_file:
         print(my_file.read())
 except FileNotFoundError as err:
     print('file does not exist')
