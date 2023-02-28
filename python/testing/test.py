@@ -3,7 +3,12 @@ import main
 
 
 class TestMain(unittest.TestCase):
+    # Execute before each function
+    def setUp(self):
+        print('🚀🚀🚀 about to test a function')
+
     def test_do_stuff(self):
+        '''TEST ONE'''
         test_param = 10
         result = main.do_stuff(test_param)
         self.assertEqual(result, 15)
@@ -22,6 +27,10 @@ class TestMain(unittest.TestCase):
         test_param = ''
         result = main.do_stuff(test_param)
         self.assertEqual(result, 'Please enter a number')
+
+    # Execute after each function
+    def tearDown(self):
+        print('🧹🧹🧹 Cleaning up')
 
 
 if __name__ == '__main__':
