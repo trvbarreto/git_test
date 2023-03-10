@@ -1,22 +1,32 @@
 import requests
 from bs4 import BeautifulSoup
+import pprint
 
-
-response = requests.get('https://news.ycombinator.com/newest')
+response = requests.get('https://news.ycombinator.com/front')
 
 soupObject = BeautifulSoup(response.text, 'html.parser')
 links = soupObject.select('.titleline')
-votes = soupObject.select('.score')
+subtext = soupObject.select('.subtext')
 
 
-def create_custom_hackernews(links, votes):
+def create_custom_hackernews(links, subtext):
     hackernews = []
     for index, item in enumerate(links):
-        title = links[index].getText()
-        href = links[index].get('href', None)
-        points = int(votes[index].getText().replace(' points', ''))
-        hackernews.append({'title': title, 'link': href})
+        title = item.getText()
+        href = item.get('href', None)
+        vote = subtext[index].select('.score')
+        if len(vote):
+            points = vote[0].getText().replace(
+                ' points', '').replace(' point', '')
+            if int(points) > 500:
+                hackernews.append(
+                    {
+                        'title': title,
+                        'link': href,
+                        'votes': points
+                    }
+                )
     return hackernews
 
 
-print(create_custom_hackernews(links, votes))
+pprint.pprint(create_custom_hackernews(links, subtext))
