@@ -9,6 +9,11 @@ links = soupObject.select('.titleline')
 subtext = soupObject.select('.subtext')
 
 
+def sort_stories_by_votes(hackernewslist):
+    # dict sorting
+    return sorted(hackernewslist, key=lambda k: k['votes'], reverse=True)
+
+
 def create_custom_hackernews(links, subtext):
     hackernews = []
     for index, item in enumerate(links):
@@ -26,7 +31,7 @@ def create_custom_hackernews(links, subtext):
                         'votes': points
                     }
                 )
-    return hackernews
+    return sort_stories_by_votes(hackernews)
 
 
 pprint.pprint(create_custom_hackernews(links, subtext))
